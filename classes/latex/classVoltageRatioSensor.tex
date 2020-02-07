@@ -1,0 +1,126 @@
+\hypertarget{classVoltageRatioSensor}{}\section{Voltage\+Ratio\+Sensor Class Reference}
+\label{classVoltageRatioSensor}\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+
+
+Class for the \hyperlink{classVoltageRatioSensor}{Voltage\+Ratio\+Sensor} Phidget.  
+
+
+
+
+{\ttfamily \#include $<$Voltage\+Ratio\+Sensor.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoltageRatioSensor_a63e3c21125ddff16315f95fa62b8ff9c}{Voltage\+Ratio\+Sensor} (int hub\+\_\+port=-\/1, Phidget\+Voltage\+Ratio\+Input\+\_\+\+Sensor\+Type stype=S\+E\+N\+S\+O\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+V\+O\+L\+T\+A\+G\+E\+R\+A\+T\+IO, int serial\+Number=0, bool active=false)
+\item 
+\hyperlink{classVoltageRatioSensor_ac0e023b5d45eec27ab92add6924b083b}{$\sim$\+Voltage\+Ratio\+Sensor} ()
+\item 
+bool \hyperlink{classVoltageRatioSensor_a33625c71e8e4a69be28360604ca14776}{All\+Good} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classVoltageRatioSensor_ad5d715d963835a920e0ad89786f31899}{Get\+Error} ()
+\item 
+double \hyperlink{classVoltageRatioSensor_a6b4a3caac9216b8710e98bb504603a69}{Get\+Value} ()
+\item 
+std\+::string \hyperlink{classVoltageRatioSensor_ae30a69afe93b91dd21735bec89ee1dce}{Get\+Error\+Code} ()
+\item 
+uint32\+\_\+t \hyperlink{classVoltageRatioSensor_a4b1e9f2f81dd65b741369a5680ffe3e0}{Get\+Data\+Interval} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classVoltageRatioSensor_ac89f4c06cb69bf4071fd965b51c3fa4e}{Set\+Data\+Interval} (uint32\+\_\+t new\+Value)
+\item 
+const char $\ast$ \hyperlink{classVoltageRatioSensor_a65c712b7dfdadf4fea644c249ac779ce}{Get\+Unit} ()
+\item 
+double \hyperlink{classVoltageRatioSensor_a9da4e001a5276d5058c765b394a98c36}{Get\+Sensor\+Value\+Change\+Trigger} ()
+\item 
+int \hyperlink{classVoltageRatioSensor_a99a4c1c3385ad27b76da87441f966641}{Set\+Sensor\+Value\+Change\+Trigger} (double new\+Value\+Change\+Trigger)
+\item 
+Phidget\+Return\+Code \hyperlink{classVoltageRatioSensor_ad6e2ac41c22ab8a9bafe95f68910d950}{Set\+Sensor\+Value\+Change\+Func} (Phidget\+Voltage\+Ratio\+Input\+\_\+\+On\+Sensor\+Change\+Callback temp\+Change\+Func)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the \hyperlink{classVoltageRatioSensor}{Voltage\+Ratio\+Sensor} Phidget. 
+
+Class interfaces with the C A\+PI for the Voltage Ratio Sensor on the hub (H\+U\+B1000\+\_\+0). It is recommended to define all devices in a namespace above the main function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVoltageRatioSensor_a63e3c21125ddff16315f95fa62b8ff9c}\label{classVoltageRatioSensor_a63e3c21125ddff16315f95fa62b8ff9c}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Voltage\+Ratio\+Sensor()}{VoltageRatioSensor()}}
+{\footnotesize\ttfamily Voltage\+Ratio\+Sensor\+::\+Voltage\+Ratio\+Sensor (\begin{DoxyParamCaption}\item[{int}]{hub\+\_\+port = {\ttfamily -\/1},  }\item[{Phidget\+Voltage\+Ratio\+Input\+\_\+\+Sensor\+Type}]{stype = {\ttfamily SENSOR\+\_\+TYPE\+\_\+VOLTAGERATIO},  }\item[{int}]{serial\+Number = {\ttfamily 0},  }\item[{bool}]{active = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor sets the serial number and sensor type if defined and attempts to connect to the device. Serial Numbers are needed for identification when connecting multiple identical devices.\mbox{\Hypertarget{classVoltageRatioSensor_ac0e023b5d45eec27ab92add6924b083b}\label{classVoltageRatioSensor_ac0e023b5d45eec27ab92add6924b083b}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!````~Voltage\+Ratio\+Sensor@{$\sim$\+Voltage\+Ratio\+Sensor}}
+\index{````~Voltage\+Ratio\+Sensor@{$\sim$\+Voltage\+Ratio\+Sensor}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{$\sim$\+Voltage\+Ratio\+Sensor()}{~VoltageRatioSensor()}}
+{\footnotesize\ttfamily Voltage\+Ratio\+Sensor\+::$\sim$\+Voltage\+Ratio\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor disconnects the device and deletes the handle
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classVoltageRatioSensor_a33625c71e8e4a69be28360604ca14776}\label{classVoltageRatioSensor_a33625c71e8e4a69be28360604ca14776}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!All\+Good@{All\+Good}}
+\index{All\+Good@{All\+Good}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{All\+Good()}{AllGood()}}
+{\footnotesize\ttfamily bool Voltage\+Ratio\+Sensor\+::\+All\+Good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Confirms if the phidget status is okay\mbox{\Hypertarget{classVoltageRatioSensor_a4b1e9f2f81dd65b741369a5680ffe3e0}\label{classVoltageRatioSensor_a4b1e9f2f81dd65b741369a5680ffe3e0}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Data\+Interval@{Get\+Data\+Interval}}
+\index{Get\+Data\+Interval@{Get\+Data\+Interval}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Data\+Interval()}{GetDataInterval()}}
+{\footnotesize\ttfamily uint32\+\_\+t Voltage\+Ratio\+Sensor\+::\+Get\+Data\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum time that must elapse before another data event is fired\mbox{\Hypertarget{classVoltageRatioSensor_ad5d715d963835a920e0ad89786f31899}\label{classVoltageRatioSensor_ad5d715d963835a920e0ad89786f31899}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Error@{Get\+Error}}
+\index{Get\+Error@{Get\+Error}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Voltage\+Ratio\+Sensor\+::\+Get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the status of the phidget\mbox{\Hypertarget{classVoltageRatioSensor_ae30a69afe93b91dd21735bec89ee1dce}\label{classVoltageRatioSensor_ae30a69afe93b91dd21735bec89ee1dce}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Error\+Code@{Get\+Error\+Code}}
+\index{Get\+Error\+Code@{Get\+Error\+Code}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Error\+Code()}{GetErrorCode()}}
+{\footnotesize\ttfamily std\+::string Voltage\+Ratio\+Sensor\+::\+Get\+Error\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the description of the status of the phidget\mbox{\Hypertarget{classVoltageRatioSensor_a9da4e001a5276d5058c765b394a98c36}\label{classVoltageRatioSensor_a9da4e001a5276d5058c765b394a98c36}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Sensor\+Value\+Change\+Trigger@{Get\+Sensor\+Value\+Change\+Trigger}}
+\index{Get\+Sensor\+Value\+Change\+Trigger@{Get\+Sensor\+Value\+Change\+Trigger}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Sensor\+Value\+Change\+Trigger()}{GetSensorValueChangeTrigger()}}
+{\footnotesize\ttfamily double Voltage\+Ratio\+Sensor\+::\+Get\+Sensor\+Value\+Change\+Trigger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum change in measurement needed to trigger a change in value event. Default is set to 0\mbox{\Hypertarget{classVoltageRatioSensor_a65c712b7dfdadf4fea644c249ac779ce}\label{classVoltageRatioSensor_a65c712b7dfdadf4fea644c249ac779ce}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Unit@{Get\+Unit}}
+\index{Get\+Unit@{Get\+Unit}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Unit()}{GetUnit()}}
+{\footnotesize\ttfamily const char$\ast$ Voltage\+Ratio\+Sensor\+::\+Get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the unit information for the quantity being measured\mbox{\Hypertarget{classVoltageRatioSensor_a6b4a3caac9216b8710e98bb504603a69}\label{classVoltageRatioSensor_a6b4a3caac9216b8710e98bb504603a69}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Get\+Value@{Get\+Value}}
+\index{Get\+Value@{Get\+Value}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Value()}{GetValue()}}
+{\footnotesize\ttfamily double Voltage\+Ratio\+Sensor\+::\+Get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+returns the current value measured by the sensor\mbox{\Hypertarget{classVoltageRatioSensor_ac89f4c06cb69bf4071fd965b51c3fa4e}\label{classVoltageRatioSensor_ac89f4c06cb69bf4071fd965b51c3fa4e}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Set\+Data\+Interval@{Set\+Data\+Interval}}
+\index{Set\+Data\+Interval@{Set\+Data\+Interval}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Set\+Data\+Interval()}{SetDataInterval()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Voltage\+Ratio\+Sensor\+::\+Set\+Data\+Interval (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum time that must elapse before another data event is fired Units of ms.\mbox{\Hypertarget{classVoltageRatioSensor_ad6e2ac41c22ab8a9bafe95f68910d950}\label{classVoltageRatioSensor_ad6e2ac41c22ab8a9bafe95f68910d950}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Set\+Sensor\+Value\+Change\+Func@{Set\+Sensor\+Value\+Change\+Func}}
+\index{Set\+Sensor\+Value\+Change\+Func@{Set\+Sensor\+Value\+Change\+Func}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Set\+Sensor\+Value\+Change\+Func()}{SetSensorValueChangeFunc()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Voltage\+Ratio\+Sensor\+::\+Set\+Sensor\+Value\+Change\+Func (\begin{DoxyParamCaption}\item[{Phidget\+Voltage\+Ratio\+Input\+\_\+\+On\+Sensor\+Change\+Callback}]{temp\+Change\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the function to be called when a voltage ratio change event is triggered. It is recommended that temp\+Change\+Func is defined after the devices namespace in the main file.\mbox{\Hypertarget{classVoltageRatioSensor_a99a4c1c3385ad27b76da87441f966641}\label{classVoltageRatioSensor_a99a4c1c3385ad27b76da87441f966641}} 
+\index{Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}!Set\+Sensor\+Value\+Change\+Trigger@{Set\+Sensor\+Value\+Change\+Trigger}}
+\index{Set\+Sensor\+Value\+Change\+Trigger@{Set\+Sensor\+Value\+Change\+Trigger}!Voltage\+Ratio\+Sensor@{Voltage\+Ratio\+Sensor}}
+\subsubsection{\texorpdfstring{Set\+Sensor\+Value\+Change\+Trigger()}{SetSensorValueChangeTrigger()}}
+{\footnotesize\ttfamily int Voltage\+Ratio\+Sensor\+::\+Set\+Sensor\+Value\+Change\+Trigger (\begin{DoxyParamCaption}\item[{double}]{new\+Value\+Change\+Trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum change in measurement needed to trigger a change in value event. Default is set to 0.\+0 units.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Voltage\+Ratio\+Sensor.\+hh\end{DoxyCompactItemize}

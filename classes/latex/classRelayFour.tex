@@ -1,0 +1,102 @@
+\hypertarget{classRelayFour}{}\section{Relay\+Four Class Reference}
+\label{classRelayFour}\index{Relay\+Four@{Relay\+Four}}
+
+
+Class for the 4x Relay Phidget.  
+
+
+
+
+{\ttfamily \#include $<$Relay\+Four.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRelayFour_a2ddfd3e80919ee0b87ddde0a9608cec1}{Relay\+Four} (int hub\+\_\+port, int serial\+Number=0)
+\item 
+\hyperlink{classRelayFour_ad3577f6c353abbbdb308cc52a1adffeb}{$\sim$\+Relay\+Four} ()
+\item 
+bool \hyperlink{classRelayFour_a64b6ba9a4ac452abe46d3fe03896c965}{All\+Good} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classRelayFour_a36f0d20421a3c390644344aed6951f2a}{Get\+Error} ()
+\item 
+std\+::string \hyperlink{classRelayFour_aa22c7288d95a6d475c176d18b2659a04}{Get\+Error\+Code} ()
+\item 
+uint32\+\_\+t \hyperlink{classRelayFour_aaded0e5c95a240ce8f4f2a8e41f51de6}{Get\+Data\+Interval} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classRelayFour_a56d7fa541ee68cbcbeb83e36e115ead8}{Set\+Data\+Interval} (uint32\+\_\+t new\+Value)
+\item 
+double \hyperlink{classRelayFour_a4bc7d85cf43949013dbe7e1272cd8fd5}{Get\+State} (int channel)
+\item 
+double \hyperlink{classRelayFour_a5590654655439dc0e12bd2d84d639bbe}{Set\+State} (int channel, int new\+State)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the 4x Relay Phidget. 
+
+Class interfaces with the C A\+PI for the 4x Relay (R\+E\+L1000\+\_\+0). It is recommended to define all devices in a namespace above the main function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRelayFour_a2ddfd3e80919ee0b87ddde0a9608cec1}\label{classRelayFour_a2ddfd3e80919ee0b87ddde0a9608cec1}} 
+\index{Relay\+Four@{Relay\+Four}!Relay\+Four@{Relay\+Four}}
+\index{Relay\+Four@{Relay\+Four}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Relay\+Four()}{RelayFour()}}
+{\footnotesize\ttfamily Relay\+Four\+::\+Relay\+Four (\begin{DoxyParamCaption}\item[{int}]{hub\+\_\+port,  }\item[{int}]{serial\+Number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor assigns the hub port and serial number if defined. Initializes values for all 4 ports and attempts to open a connection for each port. Serial Numbers are needed for identification when connecting multiple identical devices.\mbox{\Hypertarget{classRelayFour_ad3577f6c353abbbdb308cc52a1adffeb}\label{classRelayFour_ad3577f6c353abbbdb308cc52a1adffeb}} 
+\index{Relay\+Four@{Relay\+Four}!````~Relay\+Four@{$\sim$\+Relay\+Four}}
+\index{````~Relay\+Four@{$\sim$\+Relay\+Four}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{$\sim$\+Relay\+Four()}{~RelayFour()}}
+{\footnotesize\ttfamily Relay\+Four\+::$\sim$\+Relay\+Four (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+close the connections and deletes the handles for all ports
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRelayFour_a64b6ba9a4ac452abe46d3fe03896c965}\label{classRelayFour_a64b6ba9a4ac452abe46d3fe03896c965}} 
+\index{Relay\+Four@{Relay\+Four}!All\+Good@{All\+Good}}
+\index{All\+Good@{All\+Good}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{All\+Good()}{AllGood()}}
+{\footnotesize\ttfamily bool Relay\+Four\+::\+All\+Good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Confirms if the phidget status is okay\mbox{\Hypertarget{classRelayFour_aaded0e5c95a240ce8f4f2a8e41f51de6}\label{classRelayFour_aaded0e5c95a240ce8f4f2a8e41f51de6}} 
+\index{Relay\+Four@{Relay\+Four}!Get\+Data\+Interval@{Get\+Data\+Interval}}
+\index{Get\+Data\+Interval@{Get\+Data\+Interval}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Get\+Data\+Interval()}{GetDataInterval()}}
+{\footnotesize\ttfamily uint32\+\_\+t Relay\+Four\+::\+Get\+Data\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum time that must elapse before another data event is fired\mbox{\Hypertarget{classRelayFour_a36f0d20421a3c390644344aed6951f2a}\label{classRelayFour_a36f0d20421a3c390644344aed6951f2a}} 
+\index{Relay\+Four@{Relay\+Four}!Get\+Error@{Get\+Error}}
+\index{Get\+Error@{Get\+Error}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Relay\+Four\+::\+Get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the status of the phidget\mbox{\Hypertarget{classRelayFour_aa22c7288d95a6d475c176d18b2659a04}\label{classRelayFour_aa22c7288d95a6d475c176d18b2659a04}} 
+\index{Relay\+Four@{Relay\+Four}!Get\+Error\+Code@{Get\+Error\+Code}}
+\index{Get\+Error\+Code@{Get\+Error\+Code}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Get\+Error\+Code()}{GetErrorCode()}}
+{\footnotesize\ttfamily std\+::string Relay\+Four\+::\+Get\+Error\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the description of the status of the phidget\mbox{\Hypertarget{classRelayFour_a4bc7d85cf43949013dbe7e1272cd8fd5}\label{classRelayFour_a4bc7d85cf43949013dbe7e1272cd8fd5}} 
+\index{Relay\+Four@{Relay\+Four}!Get\+State@{Get\+State}}
+\index{Get\+State@{Get\+State}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Get\+State()}{GetState()}}
+{\footnotesize\ttfamily double Relay\+Four\+::\+Get\+State (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current state of one channel\mbox{\Hypertarget{classRelayFour_a56d7fa541ee68cbcbeb83e36e115ead8}\label{classRelayFour_a56d7fa541ee68cbcbeb83e36e115ead8}} 
+\index{Relay\+Four@{Relay\+Four}!Set\+Data\+Interval@{Set\+Data\+Interval}}
+\index{Set\+Data\+Interval@{Set\+Data\+Interval}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Set\+Data\+Interval()}{SetDataInterval()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Relay\+Four\+::\+Set\+Data\+Interval (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum time that must elapse before another data event is fired Units of ms.\mbox{\Hypertarget{classRelayFour_a5590654655439dc0e12bd2d84d639bbe}\label{classRelayFour_a5590654655439dc0e12bd2d84d639bbe}} 
+\index{Relay\+Four@{Relay\+Four}!Set\+State@{Set\+State}}
+\index{Set\+State@{Set\+State}!Relay\+Four@{Relay\+Four}}
+\subsubsection{\texorpdfstring{Set\+State()}{SetState()}}
+{\footnotesize\ttfamily double Relay\+Four\+::\+Set\+State (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{int}]{new\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Changes the state of a single channel
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Relay\+Four.\+hh\end{DoxyCompactItemize}

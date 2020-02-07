@@ -1,0 +1,118 @@
+\hypertarget{classIsolatedThermocouple}{}\section{Isolated\+Thermocouple Class Reference}
+\label{classIsolatedThermocouple}\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+
+
+Class for the Isolated Thermocouple Phidget.  
+
+
+
+
+{\ttfamily \#include $<$Isolated\+Thermocouple.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classIsolatedThermocouple_aa47500e6b64c5022119f5842fec998ab}{Isolated\+Thermocouple} (int serial\+Number=0)
+\item 
+\hyperlink{classIsolatedThermocouple_aec83a3f556a27500ab340a87d27dbe4d}{$\sim$\+Isolated\+Thermocouple} ()
+\item 
+bool \hyperlink{classIsolatedThermocouple_abb71c477ed8dd8fc1275b35a9ac66a63}{All\+Good} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classIsolatedThermocouple_a3472314d4a3a3ae8ae01c9d46f43e029}{Get\+Error} ()
+\item 
+std\+::string \hyperlink{classIsolatedThermocouple_a3a0569bb49b7170513d62f784486da28}{Get\+Error\+Code} ()
+\item 
+uint32\+\_\+t \hyperlink{classIsolatedThermocouple_abda8f7448a0dc141475e81e8a08a5204}{Get\+Data\+Interval} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classIsolatedThermocouple_a7d4ff9c47960781140634cb8eeac1258}{Set\+Data\+Interval} (uint32\+\_\+t new\+Value)
+\item 
+double \hyperlink{classIsolatedThermocouple_ad67a32bc965bd7833c8dd484cd8639ef}{Get\+Temp} ()
+\item 
+double \hyperlink{classIsolatedThermocouple_a5ffb58e143f6e917766de282dcc6a6eb}{Get\+Temp\+Change\+Trigger} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classIsolatedThermocouple_acd521a981c7bee54599ce4f9b926a1f8}{Set\+Temp\+Change\+Trigger} (double new\+Temp\+Change\+Trigger)
+\item 
+Phidget\+Return\+Code \hyperlink{classIsolatedThermocouple_a1aad9e7c6c473de87a636bff910283c6}{Set\+Temp\+Change\+Func} (Phidget\+Temperature\+Sensor\+\_\+\+On\+Temperature\+Change\+Callback temp\+Change\+Func)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the Isolated Thermocouple Phidget. 
+
+Class interfaces with the C A\+PI for the Isolated Thermocouple (T\+M\+P1100\+\_\+0). It is recommended to define all devices in a namespace above the main function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIsolatedThermocouple_aa47500e6b64c5022119f5842fec998ab}\label{classIsolatedThermocouple_aa47500e6b64c5022119f5842fec998ab}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Isolated\+Thermocouple()}{IsolatedThermocouple()}}
+{\footnotesize\ttfamily Isolated\+Thermocouple\+::\+Isolated\+Thermocouple (\begin{DoxyParamCaption}\item[{int}]{serial\+Number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor sets the serial number if defined and attempts to connect to the device. Serial Numbers are needed for identification when connecting multiple identical devices.\mbox{\Hypertarget{classIsolatedThermocouple_aec83a3f556a27500ab340a87d27dbe4d}\label{classIsolatedThermocouple_aec83a3f556a27500ab340a87d27dbe4d}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!````~Isolated\+Thermocouple@{$\sim$\+Isolated\+Thermocouple}}
+\index{````~Isolated\+Thermocouple@{$\sim$\+Isolated\+Thermocouple}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{$\sim$\+Isolated\+Thermocouple()}{~IsolatedThermocouple()}}
+{\footnotesize\ttfamily Isolated\+Thermocouple\+::$\sim$\+Isolated\+Thermocouple (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor disconnects the device and delets the handle
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classIsolatedThermocouple_abb71c477ed8dd8fc1275b35a9ac66a63}\label{classIsolatedThermocouple_abb71c477ed8dd8fc1275b35a9ac66a63}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!All\+Good@{All\+Good}}
+\index{All\+Good@{All\+Good}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{All\+Good()}{AllGood()}}
+{\footnotesize\ttfamily bool Isolated\+Thermocouple\+::\+All\+Good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Confirms if the phidget status is okay\mbox{\Hypertarget{classIsolatedThermocouple_abda8f7448a0dc141475e81e8a08a5204}\label{classIsolatedThermocouple_abda8f7448a0dc141475e81e8a08a5204}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Get\+Data\+Interval@{Get\+Data\+Interval}}
+\index{Get\+Data\+Interval@{Get\+Data\+Interval}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Get\+Data\+Interval()}{GetDataInterval()}}
+{\footnotesize\ttfamily uint32\+\_\+t Isolated\+Thermocouple\+::\+Get\+Data\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum time that must elapse before another data event is fired\mbox{\Hypertarget{classIsolatedThermocouple_a3472314d4a3a3ae8ae01c9d46f43e029}\label{classIsolatedThermocouple_a3472314d4a3a3ae8ae01c9d46f43e029}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Get\+Error@{Get\+Error}}
+\index{Get\+Error@{Get\+Error}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Isolated\+Thermocouple\+::\+Get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the status of the phidget\mbox{\Hypertarget{classIsolatedThermocouple_a3a0569bb49b7170513d62f784486da28}\label{classIsolatedThermocouple_a3a0569bb49b7170513d62f784486da28}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Get\+Error\+Code@{Get\+Error\+Code}}
+\index{Get\+Error\+Code@{Get\+Error\+Code}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Get\+Error\+Code()}{GetErrorCode()}}
+{\footnotesize\ttfamily std\+::string Isolated\+Thermocouple\+::\+Get\+Error\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the description of the status of the phidget\mbox{\Hypertarget{classIsolatedThermocouple_ad67a32bc965bd7833c8dd484cd8639ef}\label{classIsolatedThermocouple_ad67a32bc965bd7833c8dd484cd8639ef}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Get\+Temp@{Get\+Temp}}
+\index{Get\+Temp@{Get\+Temp}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Get\+Temp()}{GetTemp()}}
+{\footnotesize\ttfamily double Isolated\+Thermocouple\+::\+Get\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current temperature measured by the phidget\mbox{\Hypertarget{classIsolatedThermocouple_a5ffb58e143f6e917766de282dcc6a6eb}\label{classIsolatedThermocouple_a5ffb58e143f6e917766de282dcc6a6eb}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Get\+Temp\+Change\+Trigger@{Get\+Temp\+Change\+Trigger}}
+\index{Get\+Temp\+Change\+Trigger@{Get\+Temp\+Change\+Trigger}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Get\+Temp\+Change\+Trigger()}{GetTempChangeTrigger()}}
+{\footnotesize\ttfamily double Isolated\+Thermocouple\+::\+Get\+Temp\+Change\+Trigger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum threshold to trigger a change in temperature event. Default value is 0.\+0 units\mbox{\Hypertarget{classIsolatedThermocouple_a7d4ff9c47960781140634cb8eeac1258}\label{classIsolatedThermocouple_a7d4ff9c47960781140634cb8eeac1258}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Set\+Data\+Interval@{Set\+Data\+Interval}}
+\index{Set\+Data\+Interval@{Set\+Data\+Interval}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Set\+Data\+Interval()}{SetDataInterval()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Isolated\+Thermocouple\+::\+Set\+Data\+Interval (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum time that must elapse before another data event is fired Units of ms.\mbox{\Hypertarget{classIsolatedThermocouple_a1aad9e7c6c473de87a636bff910283c6}\label{classIsolatedThermocouple_a1aad9e7c6c473de87a636bff910283c6}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Set\+Temp\+Change\+Func@{Set\+Temp\+Change\+Func}}
+\index{Set\+Temp\+Change\+Func@{Set\+Temp\+Change\+Func}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Set\+Temp\+Change\+Func()}{SetTempChangeFunc()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Isolated\+Thermocouple\+::\+Set\+Temp\+Change\+Func (\begin{DoxyParamCaption}\item[{Phidget\+Temperature\+Sensor\+\_\+\+On\+Temperature\+Change\+Callback}]{temp\+Change\+Func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the function that will be called when a temperature change event occurs\mbox{\Hypertarget{classIsolatedThermocouple_acd521a981c7bee54599ce4f9b926a1f8}\label{classIsolatedThermocouple_acd521a981c7bee54599ce4f9b926a1f8}} 
+\index{Isolated\+Thermocouple@{Isolated\+Thermocouple}!Set\+Temp\+Change\+Trigger@{Set\+Temp\+Change\+Trigger}}
+\index{Set\+Temp\+Change\+Trigger@{Set\+Temp\+Change\+Trigger}!Isolated\+Thermocouple@{Isolated\+Thermocouple}}
+\subsubsection{\texorpdfstring{Set\+Temp\+Change\+Trigger()}{SetTempChangeTrigger()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Isolated\+Thermocouple\+::\+Set\+Temp\+Change\+Trigger (\begin{DoxyParamCaption}\item[{double}]{new\+Temp\+Change\+Trigger }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum threshold to trigger a change in temperature event. Default value is 0.\+0 units
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Isolated\+Thermocouple.\+hh\end{DoxyCompactItemize}

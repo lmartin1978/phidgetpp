@@ -1,0 +1,134 @@
+\hypertarget{classDisplayLCD}{}\section{Display\+L\+CD Class Reference}
+\label{classDisplayLCD}\index{Display\+L\+CD@{Display\+L\+CD}}
+
+
+Class for the Graphic L\+CD Phidget.  
+
+
+
+
+{\ttfamily \#include $<$Display\+L\+C\+D.\+hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classDisplayLCD_a04f74ffd3ac0f9499ae3d8941ed27f9c}{Display\+L\+CD} (int hub\+\_\+port=-\/1, int serial\+Number=0)
+\item 
+\hyperlink{classDisplayLCD_ac6ed1397321b6faae3bfb2b24bed8035}{$\sim$\+Display\+L\+CD} ()
+\item 
+bool \hyperlink{classDisplayLCD_ada423180074b506b76c1bce2ee0762bd}{All\+Good} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_aa1c6e2464e7a21f1d2298efb50f4f5cf}{Get\+Error} ()
+\item 
+std\+::string \hyperlink{classDisplayLCD_af29a65af420a16e9995e7e2187e4af99}{Get\+Error\+Code} ()
+\item 
+uint32\+\_\+t \hyperlink{classDisplayLCD_a4d5cb25aaf17312c7639422f44df7071}{Get\+Data\+Interval} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_a07fef3e48aaccd4c66931ee886945e5d}{Set\+Data\+Interval} (uint32\+\_\+t new\+Value)
+\item 
+double \hyperlink{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}{Get\+Backlight} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_acd9635087f3d813a39aa0b266f05203a}{Set\+Backlight} (double new\+Value)
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_ac3ea2662388a42733fbf525f3d933be7}{Clear\+Screen} ()
+\item 
+double \hyperlink{classDisplayLCD_ab7ec5dfb25093bf45480807989db4049}{Get\+Contrast} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_a4e97d5bbd320dd69724809d3f446b578}{Set\+Contrast} (double new\+Value)
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_ab8c5e288a7ce5c0dde1806f821036bac}{Write} (int line, std\+::string format\+Text)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the Graphic L\+CD Phidget. 
+
+Class interfaces with the C A\+PI for the Graphic L\+CD Phidget (L\+C\+D1100\+\_\+0). It is recommended to define all devices in a namespace above the main function. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDisplayLCD_a04f74ffd3ac0f9499ae3d8941ed27f9c}\label{classDisplayLCD_a04f74ffd3ac0f9499ae3d8941ed27f9c}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Display\+L\+CD@{Display\+L\+CD}}
+\index{Display\+L\+CD@{Display\+L\+CD}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Display\+L\+C\+D()}{DisplayLCD()}}
+{\footnotesize\ttfamily Display\+L\+C\+D\+::\+Display\+L\+CD (\begin{DoxyParamCaption}\item[{int}]{hub\+\_\+port = {\ttfamily -\/1},  }\item[{int}]{serial\+Number = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor assigns the hubport and serial number if defined, then attempts to connect to the device. Serial Numbers are needed for identification when connecting multiple identical devices\mbox{\Hypertarget{classDisplayLCD_ac6ed1397321b6faae3bfb2b24bed8035}\label{classDisplayLCD_ac6ed1397321b6faae3bfb2b24bed8035}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!````~Display\+L\+CD@{$\sim$\+Display\+L\+CD}}
+\index{````~Display\+L\+CD@{$\sim$\+Display\+L\+CD}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{$\sim$\+Display\+L\+C\+D()}{~DisplayLCD()}}
+{\footnotesize\ttfamily Display\+L\+C\+D\+::$\sim$\+Display\+L\+CD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor sets the backlight to 0, disconnects the device and deletes the handle
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisplayLCD_ada423180074b506b76c1bce2ee0762bd}\label{classDisplayLCD_ada423180074b506b76c1bce2ee0762bd}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!All\+Good@{All\+Good}}
+\index{All\+Good@{All\+Good}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{All\+Good()}{AllGood()}}
+{\footnotesize\ttfamily bool Display\+L\+C\+D\+::\+All\+Good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Confirms if the phidget status is okay\mbox{\Hypertarget{classDisplayLCD_ac3ea2662388a42733fbf525f3d933be7}\label{classDisplayLCD_ac3ea2662388a42733fbf525f3d933be7}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Clear\+Screen@{Clear\+Screen}}
+\index{Clear\+Screen@{Clear\+Screen}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Clear\+Screen()}{ClearScreen()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Clears all text and graphics from the screen/\mbox{\Hypertarget{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}\label{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Get\+Backlight@{Get\+Backlight}}
+\index{Get\+Backlight@{Get\+Backlight}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Get\+Backlight()}{GetBacklight()}}
+{\footnotesize\ttfamily double Display\+L\+C\+D\+::\+Get\+Backlight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current backlight value between 0 and 1. By default it is set to 0\mbox{\Hypertarget{classDisplayLCD_ab7ec5dfb25093bf45480807989db4049}\label{classDisplayLCD_ab7ec5dfb25093bf45480807989db4049}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Get\+Contrast@{Get\+Contrast}}
+\index{Get\+Contrast@{Get\+Contrast}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Get\+Contrast()}{GetContrast()}}
+{\footnotesize\ttfamily double Display\+L\+C\+D\+::\+Get\+Contrast (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the current contrast value between 0 and 1. By default it is set to 0.\+25\mbox{\Hypertarget{classDisplayLCD_a4d5cb25aaf17312c7639422f44df7071}\label{classDisplayLCD_a4d5cb25aaf17312c7639422f44df7071}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Get\+Data\+Interval@{Get\+Data\+Interval}}
+\index{Get\+Data\+Interval@{Get\+Data\+Interval}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Get\+Data\+Interval()}{GetDataInterval()}}
+{\footnotesize\ttfamily uint32\+\_\+t Display\+L\+C\+D\+::\+Get\+Data\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum time that must elapse before another data event is fired Units of ms\mbox{\Hypertarget{classDisplayLCD_aa1c6e2464e7a21f1d2298efb50f4f5cf}\label{classDisplayLCD_aa1c6e2464e7a21f1d2298efb50f4f5cf}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Get\+Error@{Get\+Error}}
+\index{Get\+Error@{Get\+Error}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the status of the phidget\mbox{\Hypertarget{classDisplayLCD_af29a65af420a16e9995e7e2187e4af99}\label{classDisplayLCD_af29a65af420a16e9995e7e2187e4af99}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Get\+Error\+Code@{Get\+Error\+Code}}
+\index{Get\+Error\+Code@{Get\+Error\+Code}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Get\+Error\+Code()}{GetErrorCode()}}
+{\footnotesize\ttfamily std\+::string Display\+L\+C\+D\+::\+Get\+Error\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the description of the status of the phidget\mbox{\Hypertarget{classDisplayLCD_acd9635087f3d813a39aa0b266f05203a}\label{classDisplayLCD_acd9635087f3d813a39aa0b266f05203a}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Set\+Backlight@{Set\+Backlight}}
+\index{Set\+Backlight@{Set\+Backlight}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Set\+Backlight()}{SetBacklight()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Set\+Backlight (\begin{DoxyParamCaption}\item[{double}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the backlight to a value between 0 and 1. By default it is set to 0\mbox{\Hypertarget{classDisplayLCD_a4e97d5bbd320dd69724809d3f446b578}\label{classDisplayLCD_a4e97d5bbd320dd69724809d3f446b578}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Set\+Contrast@{Set\+Contrast}}
+\index{Set\+Contrast@{Set\+Contrast}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Set\+Contrast()}{SetContrast()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Set\+Contrast (\begin{DoxyParamCaption}\item[{double}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the contrast to a value between 0 and 1. By default it is set to 0.\+25\mbox{\Hypertarget{classDisplayLCD_a07fef3e48aaccd4c66931ee886945e5d}\label{classDisplayLCD_a07fef3e48aaccd4c66931ee886945e5d}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Set\+Data\+Interval@{Set\+Data\+Interval}}
+\index{Set\+Data\+Interval@{Set\+Data\+Interval}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Set\+Data\+Interval()}{SetDataInterval()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Set\+Data\+Interval (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum time that must elapse before another data event is fired Units of ms\mbox{\Hypertarget{classDisplayLCD_ab8c5e288a7ce5c0dde1806f821036bac}\label{classDisplayLCD_ab8c5e288a7ce5c0dde1806f821036bac}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Write@{Write}}
+\index{Write@{Write}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Write()}{Write()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Write (\begin{DoxyParamCaption}\item[{int}]{line,  }\item[{std\+::string}]{format\+Text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Write text onto the L\+CD screen at a specified positon with 6x10 font at a specified line between 1 and 6
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Display\+L\+C\+D.\+hh\end{DoxyCompactItemize}
