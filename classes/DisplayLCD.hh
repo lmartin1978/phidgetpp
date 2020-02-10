@@ -150,8 +150,18 @@
          return status;
        }
 
-
-
+       PhidgetReturnCode DrawPixel(int x,int y,int state){
+         /*!
+         * Sets the state of a single pixel to off[0] or on[1] or invert[2]
+         */
+         if(state == 0){
+           return PhidgetLCD_drawPixel(handle,x,y,PIXEL_STATE_OFF);
+         }else if(state==1){
+           return PhidgetLCD_drawPixel(handle,x,y,PIXEL_STATE_ON);
+         }else if(state==2){
+           return PhidgetLCD_drawPixel(handle,x,y,PIXEL_STATE_INVERT);
+         }
+       }
 
 
        private:
