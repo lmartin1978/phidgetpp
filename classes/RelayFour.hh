@@ -87,7 +87,7 @@ public:
     *Units of ms.
     */
     for (int k = 0; k < 4;k++){
-      status = Phidget_getDataInterval((PhidgetHandle)handle[k], &dataInterval);
+      status = Phidget_setDataInterval((PhidgetHandle)handle[k], newValue);
     }
     dataInterval = GetDataInterval();
     return status;

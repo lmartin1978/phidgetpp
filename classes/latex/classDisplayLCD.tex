@@ -37,6 +37,8 @@ double \hyperlink{classDisplayLCD_ab7ec5dfb25093bf45480807989db4049}{Get\+Contra
 Phidget\+Return\+Code \hyperlink{classDisplayLCD_a4e97d5bbd320dd69724809d3f446b578}{Set\+Contrast} (double new\+Value)
 \item 
 Phidget\+Return\+Code \hyperlink{classDisplayLCD_ab8c5e288a7ce5c0dde1806f821036bac}{Write} (int line, std\+::string format\+Text)
+\item 
+Phidget\+Return\+Code \hyperlink{classDisplayLCD_aa3417ad0c5f9097ae5124ef15b35f793}{Draw\+Pixel} (int x, int y, int state)
 \end{DoxyCompactItemize}
 
 
@@ -73,7 +75,13 @@ Confirms if the phidget status is okay\mbox{\Hypertarget{classDisplayLCD_ac3ea26
 \subsubsection{\texorpdfstring{Clear\+Screen()}{ClearScreen()}}
 {\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Clear\+Screen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Clears all text and graphics from the screen/\mbox{\Hypertarget{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}\label{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}} 
+Clears all text and graphics from the screen/\mbox{\Hypertarget{classDisplayLCD_aa3417ad0c5f9097ae5124ef15b35f793}\label{classDisplayLCD_aa3417ad0c5f9097ae5124ef15b35f793}} 
+\index{Display\+L\+CD@{Display\+L\+CD}!Draw\+Pixel@{Draw\+Pixel}}
+\index{Draw\+Pixel@{Draw\+Pixel}!Display\+L\+CD@{Display\+L\+CD}}
+\subsubsection{\texorpdfstring{Draw\+Pixel()}{DrawPixel()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Display\+L\+C\+D\+::\+Draw\+Pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the state of a single pixel to off\mbox{[}0\mbox{]} or on\mbox{[}1\mbox{]} or invert\mbox{[}2\mbox{]}\mbox{\Hypertarget{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}\label{classDisplayLCD_af9aa55093dd8b4a11489b2e490aed8cc}} 
 \index{Display\+L\+CD@{Display\+L\+CD}!Get\+Backlight@{Get\+Backlight}}
 \index{Get\+Backlight@{Get\+Backlight}!Display\+L\+CD@{Display\+L\+CD}}
 \subsubsection{\texorpdfstring{Get\+Backlight()}{GetBacklight()}}

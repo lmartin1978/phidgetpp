@@ -95,12 +95,28 @@ public:
         return status;
       }
 
+       uint32_t GetDataInterval(){
+    /*!
+    *Returns the minimum time that must elapse before another data event is fired
+    */
+    status = Phidget_getDataInterval((PhidgetHandle)handle, &dataInterval);
+    return dataInterval;
+  }
 
+  PhidgetReturnCode SetDataInterval(uint32_t newValue){
+    /*!
+    *Sets the minimum time that must elapse before another data event is fired
+    *Units of ms.
+    */
+    status = Phidget_getDataInterval((PhidgetHandle)handle, newValue);                                                                               dataInterval = GetDataInterval();
+    return status;
+  }
      private:
          PhidgetHumiditySensorHandle handle;
          int hubPort;
          double valueChangeTrigger;
          double humidityValue;
          PhidgetReturnCode status;
+         uint32_t newValue;
 };
 

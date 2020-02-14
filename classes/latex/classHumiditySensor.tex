@@ -27,6 +27,10 @@ double \hyperlink{classHumiditySensor_a9bf5c13ab0c29b42fe7bc2fc0edde7ee}{Get\+Hu
 int \hyperlink{classHumiditySensor_aedd8316be052bfbda8b882b61ad46a0b}{Set\+Humidity\+Change\+Trigger} (double new\+Value\+Change\+Trigger)
 \item 
 Phidget\+Return\+Code \hyperlink{classHumiditySensor_a8ceff441668925dab38fecb150879160}{Set\+Humidity\+Change\+Func} (Phidget\+Humidity\+Sensor\+\_\+\+On\+Humidity\+Change\+Callback temp\+Change\+Func)
+\item 
+uint32\+\_\+t \hyperlink{classHumiditySensor_a19dce556c56c771849e4f62398a4bb1f}{Get\+Data\+Interval} ()
+\item 
+Phidget\+Return\+Code \hyperlink{classHumiditySensor_a7e8cd7d20eb2c942ca6fc7c22abd6fb8}{Set\+Data\+Interval} (uint32\+\_\+t new\+Value)
 \end{DoxyCompactItemize}
 
 
@@ -57,7 +61,13 @@ Destructor disconnects the device and deletes the handle
 \subsubsection{\texorpdfstring{All\+Good()}{AllGood()}}
 {\footnotesize\ttfamily bool Humidity\+Sensor\+::\+All\+Good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Confirms if the phidget status is okay\mbox{\Hypertarget{classHumiditySensor_aa425c22d068e39da7df26f473499dd37}\label{classHumiditySensor_aa425c22d068e39da7df26f473499dd37}} 
+Confirms if the phidget status is okay\mbox{\Hypertarget{classHumiditySensor_a19dce556c56c771849e4f62398a4bb1f}\label{classHumiditySensor_a19dce556c56c771849e4f62398a4bb1f}} 
+\index{Humidity\+Sensor@{Humidity\+Sensor}!Get\+Data\+Interval@{Get\+Data\+Interval}}
+\index{Get\+Data\+Interval@{Get\+Data\+Interval}!Humidity\+Sensor@{Humidity\+Sensor}}
+\subsubsection{\texorpdfstring{Get\+Data\+Interval()}{GetDataInterval()}}
+{\footnotesize\ttfamily uint32\+\_\+t Humidity\+Sensor\+::\+Get\+Data\+Interval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the minimum time that must elapse before another data event is fired\mbox{\Hypertarget{classHumiditySensor_aa425c22d068e39da7df26f473499dd37}\label{classHumiditySensor_aa425c22d068e39da7df26f473499dd37}} 
 \index{Humidity\+Sensor@{Humidity\+Sensor}!Get\+Error@{Get\+Error}}
 \index{Get\+Error@{Get\+Error}!Humidity\+Sensor@{Humidity\+Sensor}}
 \subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
@@ -75,7 +85,13 @@ returns the current humidity percentage measured by the sensor\mbox{\Hypertarget
 \subsubsection{\texorpdfstring{Get\+Humidity\+Change\+Trigger()}{GetHumidityChangeTrigger()}}
 {\footnotesize\ttfamily double Humidity\+Sensor\+::\+Get\+Humidity\+Change\+Trigger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Returns the minimum change in humidity needed to trigger a change in value event. Default is set to 0\mbox{\Hypertarget{classHumiditySensor_a8ceff441668925dab38fecb150879160}\label{classHumiditySensor_a8ceff441668925dab38fecb150879160}} 
+Returns the minimum change in humidity needed to trigger a change in value event. Default is set to 0\mbox{\Hypertarget{classHumiditySensor_a7e8cd7d20eb2c942ca6fc7c22abd6fb8}\label{classHumiditySensor_a7e8cd7d20eb2c942ca6fc7c22abd6fb8}} 
+\index{Humidity\+Sensor@{Humidity\+Sensor}!Set\+Data\+Interval@{Set\+Data\+Interval}}
+\index{Set\+Data\+Interval@{Set\+Data\+Interval}!Humidity\+Sensor@{Humidity\+Sensor}}
+\subsubsection{\texorpdfstring{Set\+Data\+Interval()}{SetDataInterval()}}
+{\footnotesize\ttfamily Phidget\+Return\+Code Humidity\+Sensor\+::\+Set\+Data\+Interval (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{new\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the minimum time that must elapse before another data event is fired Units of ms.\mbox{\Hypertarget{classHumiditySensor_a8ceff441668925dab38fecb150879160}\label{classHumiditySensor_a8ceff441668925dab38fecb150879160}} 
 \index{Humidity\+Sensor@{Humidity\+Sensor}!Set\+Humidity\+Change\+Func@{Set\+Humidity\+Change\+Func}}
 \index{Set\+Humidity\+Change\+Func@{Set\+Humidity\+Change\+Func}!Humidity\+Sensor@{Humidity\+Sensor}}
 \subsubsection{\texorpdfstring{Set\+Humidity\+Change\+Func()}{SetHumidityChangeFunc()}}

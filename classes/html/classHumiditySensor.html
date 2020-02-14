@@ -89,6 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aedd8316be052bfbda8b882b61ad46a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ceff441668925dab38fecb150879160"><td class="memItemLeft" align="right" valign="top">PhidgetReturnCode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumiditySensor.html#a8ceff441668925dab38fecb150879160">SetHumidityChangeFunc</a> (PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc)</td></tr>
 <tr class="separator:a8ceff441668925dab38fecb150879160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19dce556c56c771849e4f62398a4bb1f"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumiditySensor.html#a19dce556c56c771849e4f62398a4bb1f">GetDataInterval</a> ()</td></tr>
+<tr class="separator:a19dce556c56c771849e4f62398a4bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e8cd7d20eb2c942ca6fc7c22abd6fb8"><td class="memItemLeft" align="right" valign="top">PhidgetReturnCode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumiditySensor.html#a7e8cd7d20eb2c942ca6fc7c22abd6fb8">SetDataInterval</a> (uint32_t newValue)</td></tr>
+<tr class="separator:a7e8cd7d20eb2c942ca6fc7c22abd6fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for the Humidity Sensor Phidget. </p>
@@ -184,6 +188,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a19dce556c56c771849e4f62398a4bb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19dce556c56c771849e4f62398a4bb1f">&#9670;&nbsp;</a></span>GetDataInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t HumiditySensor::GetDataInterval </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns the minimum time that must elapse before another data event is fired</p>
+
+</div>
+</div>
 <a id="aa425c22d068e39da7df26f473499dd37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa425c22d068e39da7df26f473499dd37">&#9670;&nbsp;</a></span>GetError()</h2>
 
@@ -259,6 +289,33 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Returns the minimum change in humidity needed to trigger a change in value event. Default is set to 0</p>
+
+</div>
+</div>
+<a id="a7e8cd7d20eb2c942ca6fc7c22abd6fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8cd7d20eb2c942ca6fc7c22abd6fb8">&#9670;&nbsp;</a></span>SetDataInterval()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">PhidgetReturnCode HumiditySensor::SetDataInterval </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>newValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Sets the minimum time that must elapse before another data event is fired Units of ms.</p>
 
 </div>
 </div>

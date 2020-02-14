@@ -78,7 +78,7 @@
          *Sets the minimum time that must elapse before another data event is fired
          *Units of ms
          */
-         status = Phidget_getDataInterval((PhidgetHandle)handle, &dataInterval);
+         status = Phidget_setDataInterval((PhidgetHandle)handle, newValue);
          dataInterval = GetDataInterval();
          return status;
        }
