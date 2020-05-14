@@ -26,8 +26,7 @@ public:
         if(AllGood()){
             status = Phidget_openWaitForAttachment((PhidgetHandle)handle, 5000);
         } else {
-            Phidget_getErrorDescription(GetError(),&errorChar);
-            std::cerr << "Digital Output Constructor Error:" << errorChar << std::endl;
+            std::cerr << "Digital Output Constructor Error:" << GetErrorCode() << std::endl;
         }
     }
 
@@ -67,7 +66,7 @@ public:
          * Returns the duty cycle of PWM mode (0..1)
          */
         double dutycycle;
-        status = Phidget_getDutyCycle((PhidgetHandle)handle, &dutycycle);
+        status = PhidgetDigitalOutput_getDutyCycle(handle, &dutycycle);
         return dutycycle;
     }
 
@@ -75,7 +74,7 @@ public:
         /*!
          * Sets the duty cycle of PWM mode (0..1)
          */
-        status = Phidget_setDutyCycle((PhidgetHandle)handle, newValue);
+        status = PhidgetDigitalOutput_setDutyCycle(handle, newValue);
         return status;
     }
 
@@ -86,7 +85,7 @@ public:
         int state;
         status = PhidgetDigitalOutput_getState(handle,&state);
         if(status == EPHIDGET_OK)
-            return state
+            return state;
         else
             return -1;
     }
