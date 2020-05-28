@@ -2,7 +2,9 @@
 #include <cassert>
 #include <stdio.h>
 #include <phidget22.h>
+#include "Phidget.hh"
 
+// FIXME: This is really 4 phidgets, so should probably be defined as a vector of single relays...
 class RelayFour
 /*! \brief Class for the 4x Relay Phidget
  *
@@ -12,16 +14,9 @@ class RelayFour
 {
 public:
   RelayFour(int hub_port,int serialNumber = 0){
-    /*!
-    * Constructor assigns the hub port and serial number if defined. Initializes
-    * values for all 4 ports and attempts to open a connection for each port.
-    * Serial Numbers are needed for identification when connecting multiple
-    * identical devices.
-    */
-    hubPort = hub_port;
     for (int i = 0; i < 4;i++){
-      if(serialNumber) status = Phidget_setDeviceSerialNumber((PhidgetHandle)handle[i], serialNumber);
       status = PhidgetDigitalOutput_create(&(handle[i]));
+      if(serialNumber) status = Phidget_setDeviceSerialNumber((PhidgetHandle)handle[i], serialNumber);
       //status = Phidget_setIsHubPortDevice((PhidgetHandle)handle[i], int(hubPort >= 0));
       status = Phidget_setHubPort((PhidgetHandle)handle[i], hubPort);
       status = Phidget_setChannel((PhidgetHandle) handle[i],i);

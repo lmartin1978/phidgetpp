@@ -5,17 +5,20 @@
 #include "Phidget.hh"
 #include "DigitalOutput.hh"
 
-DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber) : PhidgetPP(hub_port, serialNumber)
+DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const int channel) : PhidgetPP(hub_port, serialNumber, channel)
 {
     status = PhidgetDigitalOutput_create(&handle);
-    status = Phidget_setIsHubPortDevice((PhidgetHandle)handle, int(hubPort >= 0));
+    phandle = (PhidgetHandle)handle;
+    status = Phidget_setIsHubPortDevice(phandle, int(hubPort >= 0));
     if (hubPort >= 0)
-        status = Phidget_setHubPort((PhidgetHandle)handle, hubPort);
+        status = Phidget_setHubPort(phandle, hubPort);
     if (serialNumber)
-        status = Phidget_setDeviceSerialNumber((PhidgetHandle)handle, serialNumber);
+        status = Phidget_setDeviceSerialNumber(phandle, serialNumber);
+    if (channel >= 0)
+        status = Phidget_setChannel(phandle, channel);
     if (AllGood())
     {
-        status = Phidget_openWaitForAttachment((PhidgetHandle)handle, 5000);
+        status = Phidget_openWaitForAttachment(phandle, 5000);
     }
     else
     {
@@ -25,7 +28,7 @@ DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber) : Phidg
 
 DigitalOutput::~DigitalOutput()
 {
-    Phidget_close((PhidgetHandle)handle);
+    Phidget_close(phandle);
     PhidgetDigitalOutput_delete(&handle);
 }
 
