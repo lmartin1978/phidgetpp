@@ -84,3 +84,15 @@ PhidgetReturnCode RelayArray::SetState(int channel, int newState)
 {
   return channels[channel].SetState(newState);
 }
+
+const std::string RelayArray::GetErrorCode()
+{
+  std::string errorString = "No Error";
+  for(DigitalOutput &ch : channels){
+    if(!ch.AllGood()){
+      errorString = ch.GetErrorCode();
+      break;
+    }
+  }
+  return errorString;
+}

@@ -44,6 +44,8 @@ public:
   */
   PhidgetReturnCode SetState(int channel, int newState);
 
+  const std::string GetErrorCode();
+
 private:
   std::vector<DigitalOutput> channels;
   uint32_t dataInterval;
