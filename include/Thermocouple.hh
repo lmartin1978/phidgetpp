@@ -14,6 +14,8 @@ class Thermocouple : public TemperatureSensor
  */
 {
 public:
+  Thermocouple(const int hub_port = -1, const int serialNumber = 0): TemperatureSensor(hub_port, serialNumber){}
+
   /** @brief Get type of thermocouple (J,K,E,T)
    * 
    */
