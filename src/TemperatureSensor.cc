@@ -2,12 +2,16 @@
 #include <phidget22.h>
 #include <string>
 #include "Phidget.hh"
-#include "IsolatedThermocouple.hh"
+#include "TemperatureSensor.hh"
 
-IsolatedThermocouple::IsolatedThermocouple(int serialNumber) : PhidgetPP(-1, serialNumber)
+TemperatureSensor::TemperatureSensor(int hub_port, int serialNumber) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetTemperatureSensor_create(&handle);
   phandle = (PhidgetHandle)handle;
+
+  status = Phidget_setIsHubPortDevice(phandle, int(hubPort >= 0));
+  if (hubPort >= 0)
+    status = Phidget_setHubPort(phandle, hubPort);
   if (serialNumber)
     status = Phidget_setDeviceSerialNumber(phandle, serialNumber);
 
@@ -17,10 +21,11 @@ IsolatedThermocouple::IsolatedThermocouple(int serialNumber) : PhidgetPP(-1, ser
   }
   else
   {
-    std::cerr << "Thermocouple Constructor Error:" << GetErrorCode() << std::endl;
+    std::cerr << "Temperature Sensor Constructor Error:" << GetErrorCode() << std::endl;
   }
 }
-IsolatedThermocouple::~IsolatedThermocouple()
+
+TemperatureSensor::~TemperatureSensor()
 {
   /*!
     * Destructor disconnects the device and delets the handle
@@ -29,7 +34,7 @@ IsolatedThermocouple::~IsolatedThermocouple()
   PhidgetTemperatureSensor_delete(&handle);
 }
 
-double IsolatedThermocouple::GetTemp()
+double TemperatureSensor::GetTemp()
 {
   /*!
     *Returns the current temperature measured by the phidget
@@ -41,7 +46,7 @@ double IsolatedThermocouple::GetTemp()
     return -999999.;
 }
 
-double IsolatedThermocouple::GetTempChangeTrigger()
+double TemperatureSensor::GetTempChangeTrigger()
 {
   /*!
     * Returns the minimum threshold to trigger a change in temperature event.
@@ -51,7 +56,7 @@ double IsolatedThermocouple::GetTempChangeTrigger()
   return tempChangeTrigger;
 }
 
-PhidgetReturnCode IsolatedThermocouple::SetTempChangeTrigger(double newTempChangeTrigger)
+PhidgetReturnCode TemperatureSensor::SetTempChangeTrigger(double newTempChangeTrigger)
 {
   /*!
     * Sets the minimum threshold to trigger a change in temperature event.
@@ -61,11 +66,23 @@ PhidgetReturnCode IsolatedThermocouple::SetTempChangeTrigger(double newTempChang
   return status;
 }
 
-PhidgetReturnCode IsolatedThermocouple::SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc)
+PhidgetReturnCode TemperatureSensor::SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc)
 {
   /*!
     * Sets the function that will be called when a temperature change event occurs
     */
   status = PhidgetTemperatureSensor_setOnTemperatureChangeHandler(handle, tempChangeFunc, NULL);
   return status;
+}
+
+double TemperatureSensor::GetMinTemp(){
+  double temp;
+  PhidgetTemperatureSensor_getMinTemperature(handle, &temp);
+  return temp;
+}
+
+double TemperatureSensor::GetMaxTemp(){
+  double temp;
+  PhidgetTemperatureSensor_getMaxTemperature(handle, &temp);
+  return temp;
 }

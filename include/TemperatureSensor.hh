@@ -1,11 +1,11 @@
-#ifndef ISOLTC_HH
-#define ISOLTC_HH
+#ifndef TEMPSENS_HH
+#define TEMPSENS_HH
 #include <iostream>
 #include <phidget22.h>
 #include <string>
 #include "Phidget.hh"
 
-class IsolatedThermocouple : public PhidgetPP
+class TemperatureSensor : public PhidgetPP
 /*! \brief Class for the Isolated Thermocouple Phidget
  *
  * Class interfaces with the C API for the Isolated Thermocouple (TMP1100_0). It is recommended to define
@@ -13,8 +13,8 @@ class IsolatedThermocouple : public PhidgetPP
  */
 {
 public:
-  IsolatedThermocouple(int serialNumber = 0);
-  ~IsolatedThermocouple();
+  TemperatureSensor(int hub_port = -1, int serialNumber = 0);
+  ~TemperatureSensor();
 
   /*! @brief Get the measured temperature
     *
@@ -41,8 +41,20 @@ public:
     */
   PhidgetReturnCode SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc);
 
-private:
+  /** @brief Get minimum measurable temperature
+   * 
+   * Changes dependent on sensor type.
+   */
+  double GetMinTemp();
+
+  /** @brief Get maximum measurable temperature
+   * 
+   * Changes dependent on sensor type.
+   */
+  double GetMaxTemp();
+protected:
   PhidgetTemperatureSensorHandle handle;
+private:
   double temperature;
   double tempChangeTrigger;
 };
