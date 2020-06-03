@@ -37,11 +37,11 @@ public:
   int SetHumidityChangeTrigger(double newValueChangeTrigger);
 
   /*! @brief Set humidity change callback
-     *
-     * Sets the function to be called when a humdity change event is
-     * triggered. It is recommended that tempChangeFunc is defined after
-     * the devices namespace in the main file.
-     */
+   *
+   * Sets the function to be called when a humdity change event is
+   * triggered. It is recommended that tempChangeFunc is defined after
+   * the devices namespace in the main file.
+   */
   PhidgetReturnCode SetHumidityChangeFunc(PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc);
 
 private:
@@ -51,3 +51,11 @@ private:
   uint32_t newValue;
 };
 #endif
+
+/* emacs
+ * Local Variables:
+ * tab-width: 8
+ * c-basic-offset: 3
+ * indent-tabs-mode: nil
+ * End:
+ */

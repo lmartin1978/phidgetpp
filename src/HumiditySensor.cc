@@ -85,3 +85,11 @@ PhidgetReturnCode HumiditySensor::SetHumidityChangeFunc(PhidgetHumiditySensor_On
   status = PhidgetHumiditySensor_setOnHumidityChangeHandler(handle, tempChangeFunc, NULL);
   return status;
 }
+
+/* emacs
+ * Local Variables:
+ * tab-width: 8
+ * c-basic-offset: 3
+ * indent-tabs-mode: nil
+ * End:
+ */

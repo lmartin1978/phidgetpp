@@ -69,3 +69,11 @@ private:
   double contrast;
   uint32_t dataInterval;
 };
+
+/* emacs
+ * Local Variables:
+ * tab-width: 8
+ * c-basic-offset: 3
+ * indent-tabs-mode: nil
+ * End:
+ */

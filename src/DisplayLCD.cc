@@ -135,3 +135,11 @@ PhidgetReturnCode DisplayLCD::DrawPixel(int x, int y, int state)
     return PhidgetLCD_drawPixel(handle, x, y, PIXEL_STATE_OFF);
   }
 }
+
+/* emacs
+ * Local Variables:
+ * tab-width: 8
+ * c-basic-offset: 3
+ * indent-tabs-mode: nil
+ * End:
+ */

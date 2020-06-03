@@ -106,3 +106,11 @@ int VoltageOutput::removeUpperVoltageBound()
   bounds[1] = 9999.;
   return 0;
 }
+
+/* emacs
+ * Local Variables:
+ * tab-width: 8
+ * c-basic-offset: 3
+ * indent-tabs-mode: nil
+ * End:
+ */
