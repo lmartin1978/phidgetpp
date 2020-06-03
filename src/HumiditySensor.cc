@@ -4,7 +4,7 @@
 #include <phidget22.h>
 #include "HumiditySensor.hh"
 
-HumiditySensor::HumiditySensor(int hub_port, int serialNumber) : PhidgetPP(hub_port, serialNumber)
+HumiditySensor::HumiditySensor(int hub_port, int serialNumber, bool netServer) : PhidgetPP(hub_port, serialNumber)
 {
   /*!
       * Constructor sets the serial number and sensor type if defined and
@@ -21,7 +21,16 @@ HumiditySensor::HumiditySensor(int hub_port, int serialNumber) : PhidgetPP(hub_p
 
   if (AllGood())
   {
-    status = Phidget_openWaitForAttachment(phandle, 5000);
+    if (netServer)
+    {
+      Phidget_setIsRemote(phandle, 1);
+      PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+      status = Phidget_open(phandle);
+    }
+    else
+    {
+      status = Phidget_openWaitForAttachment(phandle, 5000);
+    }
   }
   else
   {

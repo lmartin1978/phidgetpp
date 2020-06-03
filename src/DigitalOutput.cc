@@ -5,7 +5,7 @@
 #include "Phidget.hh"
 #include "DigitalOutput.hh"
 
-DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const int channel, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber, channel)
+DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const int channel, bool hubPortDevice, bool netServer) : PhidgetPP(hub_port, serialNumber, channel)
 {
     status = PhidgetDigitalOutput_create(&handle);
     phandle = (PhidgetHandle)handle;
@@ -18,7 +18,16 @@ DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const i
         status = Phidget_setChannel(phandle, channel);
     if (AllGood())
     {
-        status = Phidget_openWaitForAttachment(phandle, 5000);
+        if (netServer)
+        {
+            Phidget_setIsRemote(phandle, 1);
+            PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+            status = Phidget_open(phandle);
+        }
+        else
+        {
+            status = Phidget_openWaitForAttachment(phandle, 5000);
+        }
     }
     else
     {

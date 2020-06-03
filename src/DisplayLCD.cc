@@ -6,7 +6,7 @@
 #include "Phidget.hh"
 #include "DisplayLCD.hh"
 
-DisplayLCD::DisplayLCD(int hub_port, int serialNumber) : PhidgetPP(hub_port, serialNumber)
+DisplayLCD::DisplayLCD(int hub_port, int serialNumber, bool netServer) : PhidgetPP(hub_port, serialNumber)
 { //
   /*!
           *Constructor assigns the hubport and serial number if defined,
@@ -25,7 +25,16 @@ DisplayLCD::DisplayLCD(int hub_port, int serialNumber) : PhidgetPP(hub_port, ser
   //attempt to connect to device
   if (AllGood())
   {
-    status = Phidget_openWaitForAttachment(phandle, 5000);
+    if (netServer)
+    {
+      Phidget_setIsRemote(phandle, 1);
+      PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+      status = Phidget_open(phandle);
+    }
+    else
+    {
+      status = Phidget_openWaitForAttachment(phandle, 5000);
+    }
   }
   else
   {

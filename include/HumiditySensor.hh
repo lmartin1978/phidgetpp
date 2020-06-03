@@ -14,7 +14,7 @@ class HumiditySensor : public PhidgetPP
  */
 {
 public:
-  HumiditySensor(int hub_port = -1, int serialNumber = 0);
+  HumiditySensor(int hub_port = -1, int serialNumber = 0, bool netServer = false);
   ~HumiditySensor();
 
   /*! @brief Get humidity measurement

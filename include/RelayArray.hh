@@ -13,7 +13,7 @@ class RelayArray
  */
 {
 public:
-  RelayArray(int nch, int hub_port, int serialNumber = 0);
+  RelayArray(int nch, int hub_port, int serialNumber = 0, bool netServer = false);
 
   /*! @brief Checks status of all channels
   *

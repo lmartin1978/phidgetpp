@@ -5,7 +5,7 @@
 #include "Phidget.hh"
 #include "TemperatureSensor.hh"
 
-TemperatureSensor::TemperatureSensor(int hub_port, int serialNumber) : PhidgetPP(hub_port, serialNumber)
+TemperatureSensor::TemperatureSensor(int hub_port, int serialNumber, bool netServer) : PhidgetPP(hub_port, serialNumber)
 {
     status = PhidgetTemperatureSensor_create(&handle);
     phandle = (PhidgetHandle)handle;
@@ -17,13 +17,22 @@ TemperatureSensor::TemperatureSensor(int hub_port, int serialNumber) : PhidgetPP
         status = Phidget_setDeviceSerialNumber(phandle, serialNumber);
 
     if (AllGood())
+    {
+        if (netServer)
+        {
+            Phidget_setIsRemote(phandle, 1);
+            PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+            status = Phidget_open(phandle);
+        }
+        else
         {
             status = Phidget_openWaitForAttachment(phandle, 5000);
         }
+    }
     else
-        {
-            std::cerr << "Temperature Sensor Constructor Error:" << GetErrorCode() << std::endl;
-        }
+    {
+        std::cerr << "Temperature Sensor Constructor Error:" << GetErrorCode() << std::endl;
+    }
 }
 
 TemperatureSensor::~TemperatureSensor()
@@ -76,13 +85,15 @@ PhidgetReturnCode TemperatureSensor::SetTempChangeFunc(PhidgetTemperatureSensor_
     return status;
 }
 
-double TemperatureSensor::GetMinTemp(){
+double TemperatureSensor::GetMinTemp()
+{
     double temp;
     PhidgetTemperatureSensor_getMinTemperature(handle, &temp);
     return temp;
 }
 
-double TemperatureSensor::GetMaxTemp(){
+double TemperatureSensor::GetMaxTemp()
+{
     double temp;
     PhidgetTemperatureSensor_getMaxTemperature(handle, &temp);
     return temp;

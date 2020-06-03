@@ -6,7 +6,7 @@
 #include "VoltageOutput.hh"
 
 VoltageOutput::VoltageOutput(int hub_port, int serialNumber,
-                             PhidgetVoltageOutput_VoltageOutputRange outputRange) : PhidgetPP(hub_port, serialNumber)
+                             PhidgetVoltageOutput_VoltageOutputRange outputRange, bool netServer) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetVoltageOutput_create(&handle);
   phandle = (PhidgetHandle)handle;
@@ -21,7 +21,16 @@ VoltageOutput::VoltageOutput(int hub_port, int serialNumber,
 
   if (AllGood())
   {
-    status = Phidget_openWaitForAttachment((PhidgetHandle)handle, 5000);
+    if (netServer)
+    {
+      Phidget_setIsRemote(phandle, 1);
+      PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+      status = Phidget_open(phandle);
+    }
+    else
+    {
+      status = Phidget_openWaitForAttachment(phandle, 5000);
+    }
   }
   else
   {

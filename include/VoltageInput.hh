@@ -14,7 +14,7 @@ class VoltageInput: public PhidgetPP
  */
 {
 public:
-  VoltageInput(int hub_port = -1,int serialNumber = 0, bool hubPortDevice = false);
+  VoltageInput(int hub_port = -1,int serialNumber = 0, bool hubPortDevice = false, bool netServer = false);
 
   ~VoltageInput();
 

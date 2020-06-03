@@ -23,7 +23,7 @@ public:
    * The other choice for output range is VOLTAGE_OUTPUT_RANGE_10V.
    */
   VoltageOutput(int hub_port = -1, int serialNumber = 0,
-                PhidgetVoltageOutput_VoltageOutputRange outputRange = VOLTAGE_OUTPUT_RANGE_5V);
+                PhidgetVoltageOutput_VoltageOutputRange outputRange = VOLTAGE_OUTPUT_RANGE_5V, bool netServer = false);
 
   ~VoltageOutput();
 

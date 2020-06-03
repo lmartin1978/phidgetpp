@@ -6,7 +6,7 @@
 #include "VoltageRatioSensor.hh"
 
 VoltageRatioSensor::VoltageRatioSensor(int hub_port, PhidgetVoltageRatioInput_SensorType stype,
-                   int serialNumber, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber)
+                                       int serialNumber, bool hubPortDevice, bool netServer) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetVoltageRatioInput_create(&handle);
   phandle = (PhidgetHandle)handle;
@@ -19,7 +19,16 @@ VoltageRatioSensor::VoltageRatioSensor(int hub_port, PhidgetVoltageRatioInput_Se
 
   if (AllGood())
   {
-    status = Phidget_openWaitForAttachment((PhidgetHandle)handle, 5000);
+    if (netServer)
+    {
+      Phidget_setIsRemote(phandle, 1);
+      PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+      status = Phidget_open(phandle);
+    }
+    else
+    {
+      status = Phidget_openWaitForAttachment(phandle, 5000);
+    }
     PhidgetVoltageRatioInput_setSensorType(handle, sensorType);
     PhidgetVoltageRatioInput_getSensorUnit(handle, &sensorUnit);
   }

@@ -13,7 +13,7 @@ class DisplayLCD : public PhidgetPP
    */
 {
 public:
-  DisplayLCD(int hub_port = -1, int serialNumber = 0);
+  DisplayLCD(int hub_port = -1, int serialNumber = 0, bool netServer = false);
   ~DisplayLCD();
 
   /*! @brief Get current backlight setting

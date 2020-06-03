@@ -6,7 +6,7 @@
 #include "Phidget.hh"
 #include "VoltageInput.hh"
 
-VoltageInput::VoltageInput(int hub_port, int serialNumber, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber)
+VoltageInput::VoltageInput(int hub_port, int serialNumber, bool hubPortDevice, bool netServer) : PhidgetPP(hub_port, serialNumber)
 {
     status = PhidgetVoltageInput_create(&handle);
     phandle = (PhidgetHandle)handle;
@@ -16,13 +16,22 @@ VoltageInput::VoltageInput(int hub_port, int serialNumber, bool hubPortDevice) :
     if (serialNumber)
         status = Phidget_setDeviceSerialNumber(phandle, serialNumber);
     if (AllGood())
+    {
+        if (netServer)
+        {
+            Phidget_setIsRemote(phandle, 1);
+            PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
+            status = Phidget_open(phandle);
+        }
+        else
         {
             status = Phidget_openWaitForAttachment(phandle, 5000);
         }
+    }
     else
-        {
-            std::cerr << "Voltage Input Constructor Error:" << GetErrorCode() << std::endl;
-        }
+    {
+        std::cerr << "Voltage Input Constructor Error:" << GetErrorCode() << std::endl;
+    }
 }
 
 VoltageInput::~VoltageInput()
@@ -38,7 +47,6 @@ double VoltageInput::GetVoltage()
         return voltage;
     else
         return std::numeric_limits<double>::quiet_NaN();
-
 }
 
 double VoltageInput::GetVoltageValueChangeTrigger()
@@ -48,7 +56,6 @@ double VoltageInput::GetVoltageValueChangeTrigger()
         return valueChangeTrigger;
     else
         return std::numeric_limits<double>::quiet_NaN();
-
 }
 
 int VoltageInput::SetVoltageValueChangeTrigger(double newValueChangeTrigger)

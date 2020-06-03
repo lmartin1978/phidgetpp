@@ -13,7 +13,7 @@ class TemperatureSensor : public PhidgetPP
  */
 {
 public:
-  TemperatureSensor(int hub_port = -1, int serialNumber = 0);
+  TemperatureSensor(int hub_port = -1, int serialNumber = 0, bool netServer = false);
   ~TemperatureSensor();
 
   /*! @brief Get the measured temperature

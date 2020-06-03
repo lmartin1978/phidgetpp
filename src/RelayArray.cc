@@ -7,11 +7,11 @@
 #include "DigitalOutput.hh"
 #include "RelayArray.hh"
 
-RelayArray::RelayArray(int nch, int hub_port, int serialNumber)
+RelayArray::RelayArray(int nch, int hub_port, int serialNumber, bool netServer)
 {
   for (int i = 0; i < nch; i++)
   {
-    channels.emplace_back(hub_port, serialNumber, i, false);
+    channels.emplace_back(hub_port, serialNumber, i, false, netServer);
   }
 
   if (!AllGood())

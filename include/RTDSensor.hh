@@ -14,7 +14,7 @@ class RTDSensor : public TemperatureSensor
  */
 {
 public:
-  RTDSensor(const int hub_port = -1, const int serialNumber = 0): TemperatureSensor(hub_port, serialNumber){}
+  RTDSensor(const int hub_port = -1, const int serialNumber = 0, bool netServer = false): TemperatureSensor(hub_port, serialNumber, netServer){}
   
   /** @brief Get type of RTD
    * 

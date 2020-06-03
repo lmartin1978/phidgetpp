@@ -18,7 +18,7 @@ public:
      * 
      * Parameters are passed on to Base class constructor
      */
-    DigitalOutput(const int hub_port = -1,const int serialNumber = 0, const int channel = -1, bool hubPortDevice = true);
+    DigitalOutput(const int hub_port = -1,const int serialNumber = 0, const int channel = -1, bool hubPortDevice = true, bool netServer = false);
 
     /** \brief Destructor
      * 
