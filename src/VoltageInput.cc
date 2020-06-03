@@ -5,11 +5,11 @@
 #include "Phidget.hh"
 #include "VoltageInput.hh"
 
-VoltageInput::VoltageInput(int hub_port, int serialNumber) : PhidgetPP(hub_port, serialNumber)
+VoltageInput::VoltageInput(int hub_port, int serialNumber, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetVoltageInput_create(&handle);
   phandle = (PhidgetHandle)handle;
-  status = Phidget_setIsHubPortDevice(phandle, int(hubPort >= 0));
+  status = Phidget_setIsHubPortDevice(phandle, int(hubPortDevice));
   if (hubPort >= 0)
     status = Phidget_setHubPort(phandle, hubPort);
   if (serialNumber)

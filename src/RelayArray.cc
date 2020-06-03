@@ -11,7 +11,7 @@ RelayArray::RelayArray(int nch, int hub_port, int serialNumber)
 {
   for (int i = 0; i < nch; i++)
   {
-    channels.emplace_back(hub_port, serialNumber, i);
+    channels.emplace_back(hub_port, serialNumber, i, false);
   }
 
   if (!AllGood())

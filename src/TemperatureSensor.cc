@@ -9,7 +9,7 @@ TemperatureSensor::TemperatureSensor(int hub_port, int serialNumber) : PhidgetPP
   status = PhidgetTemperatureSensor_create(&handle);
   phandle = (PhidgetHandle)handle;
 
-  status = Phidget_setIsHubPortDevice(phandle, int(hubPort >= 0));
+  status = Phidget_setIsHubPortDevice(phandle, 0);
   if (hubPort >= 0)
     status = Phidget_setHubPort(phandle, hubPort);
   if (serialNumber)

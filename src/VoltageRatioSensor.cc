@@ -6,12 +6,12 @@
 #include "VoltageRatioSensor.hh"
 
 VoltageRatioSensor::VoltageRatioSensor(int hub_port, PhidgetVoltageRatioInput_SensorType stype,
-                   int serialNumber) : PhidgetPP(hub_port, serialNumber)
+                   int serialNumber, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetVoltageRatioInput_create(&handle);
   phandle = (PhidgetHandle)handle;
   sensorType = stype;
-  status = Phidget_setIsHubPortDevice((PhidgetHandle)handle, int(hubPort >= 0));
+  status = Phidget_setIsHubPortDevice((PhidgetHandle)handle, int(hubPortDevice));
   if (hubPort >= 0)
     status = Phidget_setHubPort((PhidgetHandle)handle, hubPort);
   if (serialNumber)

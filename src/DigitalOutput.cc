@@ -5,11 +5,11 @@
 #include "Phidget.hh"
 #include "DigitalOutput.hh"
 
-DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const int channel) : PhidgetPP(hub_port, serialNumber, channel)
+DigitalOutput::DigitalOutput(const int hub_port, const int serialNumber, const int channel, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber, channel)
 {
     status = PhidgetDigitalOutput_create(&handle);
     phandle = (PhidgetHandle)handle;
-    status = Phidget_setIsHubPortDevice(phandle, int(hubPort >= 0));
+    status = Phidget_setIsHubPortDevice(phandle, int(hubPortDevice));
     if (hubPort >= 0)
         status = Phidget_setHubPort(phandle, hubPort);
     if (serialNumber)

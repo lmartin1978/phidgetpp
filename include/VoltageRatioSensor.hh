@@ -19,7 +19,7 @@ public:
    * Constructor sets the sensor type, which is used for readout conversion
    */
   VoltageRatioSensor(int hub_port = -1, PhidgetVoltageRatioInput_SensorType stype = SENSOR_TYPE_VOLTAGERATIO,
-                     int serialNumber = 0);
+                     int serialNumber = 0, bool hubPortDevice = true);
 
   ~VoltageRatioSensor();
 

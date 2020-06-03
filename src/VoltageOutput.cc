@@ -6,13 +6,14 @@
 #include "VoltageOutput.hh"
 
 VoltageOutput::VoltageOutput(int hub_port, int serialNumber,
-              PhidgetVoltageOutput_VoltageOutputRange outputRange) : PhidgetPP(hub_port, serialNumber)
+                             PhidgetVoltageOutput_VoltageOutputRange outputRange) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetVoltageOutput_create(&handle);
   phandle = (PhidgetHandle)handle;
   status = PhidgetVoltageOutput_setVoltageOutputRange(handle, outputRange);
   PhidgetVoltageOutput_getMinVoltage(handle, &hwbounds[0]);
   PhidgetVoltageOutput_getMaxVoltage(handle, &hwbounds[1]);
+  status = Phidget_setIsHubPortDevice(phandle, 0);
   if (hubPort >= 0)
     status = Phidget_setHubPort((PhidgetHandle)handle, hubPort);
   if (serialNumber)
