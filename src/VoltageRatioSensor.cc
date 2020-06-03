@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cassert>
 #include <stdio.h>
+#include <limits>
 #include <phidget22.h>
 #include "Phidget.hh"
 #include "VoltageRatioSensor.hh"
@@ -50,7 +51,7 @@ double VoltageRatioSensor::GetVoltageRatio()
   if (status == EPHIDGET_OK)
     return vRatio;
   else
-    return -999999.;
+    return std::numeric_limits<double>::quiet_NaN();
 }
 
 double VoltageRatioSensor::GetValue()
@@ -59,7 +60,7 @@ double VoltageRatioSensor::GetValue()
   if (status == EPHIDGET_OK)
     return sensorValue;
   else
-    return -999999.;
+    return std::numeric_limits<double>::quiet_NaN();
 }
 
 const char *VoltageRatioSensor::GetUnit()
@@ -73,7 +74,7 @@ double VoltageRatioSensor::GetSensorValueChangeTrigger()
   if (status == EPHIDGET_OK)
     return valueChangeTrigger;
   else
-    return -999999.;
+    return std::numeric_limits<double>::quiet_NaN();
 }
 
 int VoltageRatioSensor::SetSensorValueChangeTrigger(double newValueChangeTrigger)
