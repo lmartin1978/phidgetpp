@@ -13,42 +13,43 @@ class RelayArray
  */
 {
 public:
-  RelayArray(int nch, int hub_port, int serialNumber = 0, bool netServer = false);
+   RelayArray(int nch, int hub_port, int serialNumber = 0, bool netServer = false);
+   ~RelayArray();
 
-  /*! @brief Checks status of all channels
-  *
-  */
-  bool AllGood();
+   /*! @brief Checks status of all channels
+    *
+    */
+   bool AllGood();
 
-  /*! @brief Get data interval setting
-  *
-  * Returns the minimum time that must elapse before another data event is fired.
-  * This assumes all channels have the same setting.
-  */
-  uint32_t GetDataInterval();
+   /*! @brief Get data interval setting
+    *
+    * Returns the minimum time that must elapse before another data event is fired.
+    * This assumes all channels have the same setting.
+    */
+   uint32_t GetDataInterval();
 
-  /*! @brief Set data interval for all channels
+   /*! @brief Set data interval for all channels
     *
     *Sets the minimum time that must elapse before another data event is fired
     *Units of ms.
     */
-  PhidgetReturnCode SetDataInterval(uint32_t newValue);
+   PhidgetReturnCode SetDataInterval(uint32_t newValue);
 
-  /*! @brief Get state of one channel
+   /*! @brief Get state of one channel
     *
     */
-  int GetState(int channel);
+   int GetState(int channel);
 
-  /*! @brief Changes the state of a single channel
-  *
-  */
-  PhidgetReturnCode SetState(int channel, int newState);
+   /*! @brief Changes the state of a single channel
+    *
+    */
+   PhidgetReturnCode SetState(int channel, int newState);
 
-  const std::string GetErrorCode();
+   const std::string GetErrorCode();
 
 private:
-  std::vector<DigitalOutput> channels;
-  uint32_t dataInterval;
+   std::vector<DigitalOutput*> channels;
+   uint32_t dataInterval;
 };
 
 /* emacs

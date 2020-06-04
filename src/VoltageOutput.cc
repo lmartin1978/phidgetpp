@@ -24,13 +24,9 @@ VoltageOutput::VoltageOutput(int hub_port, int serialNumber,
     if (netServer)
     {
       Phidget_setIsRemote(phandle, 1);
-      PhidgetNet_enableServerDiscovery(PHIDGETSERVER_DEVICEREMOTE);
-      status = Phidget_open(phandle);
+      PhidgetNet_addServer("ServerName", "localhost", 5661, "", 0);
     }
-    else
-    {
-      status = Phidget_openWaitForAttachment(phandle, 5000);
-    }
+    status = Phidget_openWaitForAttachment(phandle, 5000);
   }
   else
   {
