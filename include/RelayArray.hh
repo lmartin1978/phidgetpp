@@ -47,6 +47,8 @@ public:
 
    const std::string GetErrorCode();
 
+   const std::vector<std::string> GetErrorCodes();
+   
 private:
    std::vector<DigitalOutput*> channels;
    uint32_t dataInterval;

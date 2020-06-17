@@ -102,6 +102,15 @@ const std::string RelayArray::GetErrorCode()
   }
   return errorString;
 }
+
+const std::vector<std::string> RelayArray::GetErrorCodes()
+{
+   std::vector<std::string> out;
+  for(DigitalOutput *ch : channels){
+     out.push_back(ch->GetErrorCode());
+  }
+  return out;
+}
 /* emacs
  * Local Variables:
  * tab-width: 8
