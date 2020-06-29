@@ -45,10 +45,20 @@ public:
     */
    PhidgetReturnCode SetState(int channel, int newState);
 
+   /*! @brief Get states of all channels
+    *
+    */
+   const std::vector<int> GetStates();
+
+   /*! @brief Change the state of all channels
+    *
+    */
+   PhidgetReturnCode SetStates(std::vector<int> newStates);
+
    const std::string GetErrorCode();
 
    const std::vector<std::string> GetErrorCodes();
-   
+
 private:
    std::vector<DigitalOutput*> channels;
    uint32_t dataInterval;
