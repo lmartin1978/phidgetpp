@@ -60,13 +60,37 @@ int VoltageInput::SetVoltageValueChangeTrigger(double newValueChangeTrigger)
     if (status == EPHIDGET_OK)
         return 1;
     else
-        return 0.;
+        return 0;
 }
 
 PhidgetReturnCode VoltageInput::setVoltageValueChangeFunc(PhidgetVoltageInput_OnVoltageChangeCallback tempChangeFunc)
 {
     status = PhidgetVoltageInput_setOnVoltageChangeHandler(handle, tempChangeFunc, NULL);
     return status;
+}
+
+bool VoltageInput::SetVoltageRange(PhidgetVoltageInput_VoltageRange vrange)
+{
+   PhidgetReturnCode err = PhidgetVoltageInput_setVoltageRange(handle, vrange);
+   if(err != EPHIDGET_OK){
+      std::cerr << GetErrorCode() << std::endl;
+      return false;
+   }
+   return true;
+}
+
+double VoltageInput::GetVmin()
+{
+   double v;
+   PhidgetVoltageInput_getMinVoltage(handle, &v);
+   return v;
+}
+
+double VoltageInput::GetVmax()
+{
+   double v;
+   PhidgetVoltageInput_getMaxVoltage(handle, &v);
+   return v;
 }
 
 /* emacs
