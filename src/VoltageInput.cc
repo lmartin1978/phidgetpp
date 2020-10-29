@@ -93,6 +93,13 @@ double VoltageInput::GetVmax()
    return v;
 }
 
+uint32_t VoltageInput::GetMinDataInterval()
+{
+   uint32_t minDataInterval;
+   status = PhidgetVoltageInput_getMinDataInterval(handle, &minDataInterval);
+   return minDataInterval;
+}
+
 /* emacs
  * Local Variables:
  * tab-width: 8

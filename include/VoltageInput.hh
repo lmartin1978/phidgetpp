@@ -63,6 +63,14 @@ public:
     * Returns the highest value of the measurement range.
     */
    double GetVmax();
+
+   /*! @brief Get minimum possible time between readouts/outputs
+    *
+    * Returns the smallest possible data interval for this phidget in
+    * units of ms.
+    */
+   uint32_t GetMinDataInterval();
+
 private:
    double valueChangeTrigger;
    PhidgetVoltageInputHandle handle;
