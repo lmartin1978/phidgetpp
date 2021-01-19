@@ -82,9 +82,9 @@ int VoltageRatioSensor::SetSensorValueChangeTrigger(double newValueChangeTrigger
     return 0.;
 }
 
-PhidgetReturnCode VoltageRatioSensor::SetSensorValueChangeFunc(PhidgetVoltageRatioInput_OnSensorChangeCallback tempChangeFunc)
+PhidgetReturnCode VoltageRatioSensor::SetSensorValueChangeFunc(PhidgetVoltageRatioInput_OnSensorChangeCallback tempChangeFunc, void *ctx)
 {
-  status = PhidgetVoltageRatioInput_setOnSensorChangeHandler(handle, tempChangeFunc, NULL);
+  status = PhidgetVoltageRatioInput_setOnSensorChangeHandler(handle, tempChangeFunc, ctx);
   return status;
 }
 

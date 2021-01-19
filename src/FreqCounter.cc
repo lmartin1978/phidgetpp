@@ -4,11 +4,14 @@
 #include "Phidget.hh"
 #include "FreqCounter.hh"
 
-FreqCounter::FreqCounter(int serialNumber) : PhidgetPP(-1, serialNumber)
+FreqCounter::FreqCounter(int hub_port, int serialNumber, bool hubPortDevice) : PhidgetPP(hub_port, serialNumber)
 {
   status = PhidgetFrequencyCounter_create(&handle);
   phandle = (PhidgetHandle)handle;
 
+  status = Phidget_setIsHubPortDevice(phandle, int(hubPortDevice));
+  if (hubPort >= 0)
+     status = Phidget_setHubPort(phandle, hubPort);
   if (serialNumber)
     status = Phidget_setDeviceSerialNumber(phandle, serialNumber);
 
@@ -46,13 +49,13 @@ double FreqCounter::GetFreq()
   PhidgetFrequencyCounter_delete(&handle);
 }
 
-PhidgetReturnCode FreqCounter::SetFrequencyChangeFunc(PhidgetFrequencyCounter_OnFrequencyChangeCallback freqChangeFunc)
+PhidgetReturnCode FreqCounter::SetFrequencyChangeFunc(PhidgetFrequencyCounter_OnFrequencyChangeCallback freqChangeFunc, void *ctx)
 {
   /*!
       *Sets the function to be called once the frequency changes, note it is
       *ideal to define the function in the main file.
       */
-  status = PhidgetFrequencyCounter_setOnFrequencyChangeHandler(handle, freqChangeFunc, NULL);
+  status = PhidgetFrequencyCounter_setOnFrequencyChangeHandler(handle, freqChangeFunc, ctx);
   return status;
 }
 

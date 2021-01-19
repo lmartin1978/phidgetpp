@@ -63,9 +63,9 @@ int VoltageInput::SetVoltageValueChangeTrigger(double newValueChangeTrigger)
         return 0;
 }
 
-PhidgetReturnCode VoltageInput::setVoltageValueChangeFunc(PhidgetVoltageInput_OnVoltageChangeCallback tempChangeFunc)
+PhidgetReturnCode VoltageInput::setVoltageValueChangeFunc(PhidgetVoltageInput_OnVoltageChangeCallback tempChangeFunc, void *ctx)
 {
-    status = PhidgetVoltageInput_setOnVoltageChangeHandler(handle, tempChangeFunc, NULL);
+    status = PhidgetVoltageInput_setOnVoltageChangeHandler(handle, tempChangeFunc, ctx);
     return status;
 }
 

@@ -80,14 +80,14 @@ int HumiditySensor::SetHumidityChangeTrigger(double newValueChangeTrigger)
     return 0.;
 }
 
-PhidgetReturnCode HumiditySensor::SetHumidityChangeFunc(PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc)
+PhidgetReturnCode HumiditySensor::SetHumidityChangeFunc(PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc, void *ctx)
 {
   /*!
         * Sets the function to be called when a humdity change event is
         * triggered. It is recommended that tempChangeFunc is defined after
         * the devices namespace in the main file.
         */
-  status = PhidgetHumiditySensor_setOnHumidityChangeHandler(handle, tempChangeFunc, NULL);
+  status = PhidgetHumiditySensor_setOnHumidityChangeHandler(handle, tempChangeFunc, ctx);
   return status;
 }
 

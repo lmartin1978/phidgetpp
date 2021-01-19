@@ -42,7 +42,7 @@ public:
    * triggered. It is recommended that tempChangeFunc is defined after
    * the devices namespace in the main file.
    */
-  PhidgetReturnCode SetHumidityChangeFunc(PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc);
+   PhidgetReturnCode SetHumidityChangeFunc(PhidgetHumiditySensor_OnHumidityChangeCallback tempChangeFunc, void *ctx = NULL);
 
 private:
   PhidgetHumiditySensorHandle handle;

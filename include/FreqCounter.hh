@@ -19,7 +19,7 @@ public:
       * to the device. Serial Numbers are needed for identification when
       * connecting multiple identical devices.
       */
-    FreqCounter(int serialNumber = 0);
+    FreqCounter(int hub_port = -1, int serialNumber = 0, bool hubPortDevice = false);
     ~FreqCounter(); ///< Destructor
 
     double GetFreq(); ///< Get measured frequency
@@ -29,7 +29,7 @@ public:
       * Sets the function to be called once the frequency changes, note it is
       * ideal to define the function in the main file.
       */
-    PhidgetReturnCode SetFrequencyChangeFunc(PhidgetFrequencyCounter_OnFrequencyChangeCallback freqChangeFunc);
+    PhidgetReturnCode SetFrequencyChangeFunc(PhidgetFrequencyCounter_OnFrequencyChangeCallback freqChangeFunc, void *ctx = NULL);
 
       /*! @brief Set low frequency reporting threshold
       *

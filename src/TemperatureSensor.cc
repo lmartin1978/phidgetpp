@@ -72,12 +72,12 @@ PhidgetReturnCode TemperatureSensor::SetTempChangeTrigger(double newTempChangeTr
     return status;
 }
 
-PhidgetReturnCode TemperatureSensor::SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc)
+PhidgetReturnCode TemperatureSensor::SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc, void *ctx)
 {
     /*!
      * Sets the function that will be called when a temperature change event occurs
      */
-    status = PhidgetTemperatureSensor_setOnTemperatureChangeHandler(handle, tempChangeFunc, NULL);
+    status = PhidgetTemperatureSensor_setOnTemperatureChangeHandler(handle, tempChangeFunc, ctx);
     return status;
 }
 

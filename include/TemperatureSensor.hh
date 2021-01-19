@@ -39,7 +39,7 @@ public:
     *
     * Sets the function that will be called when a temperature change event occurs
     */
-  PhidgetReturnCode SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc);
+  PhidgetReturnCode SetTempChangeFunc(PhidgetTemperatureSensor_OnTemperatureChangeCallback tempChangeFunc, void *ctx = NULL);
 
   /** @brief Get minimum measurable temperature
    * 

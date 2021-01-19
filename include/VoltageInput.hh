@@ -42,7 +42,7 @@ public:
     * Sets the function to be called when a voltage change event occurs. Recommended that this function
     * is defined in the main c++ file.
     */
-   PhidgetReturnCode setVoltageValueChangeFunc(PhidgetVoltageInput_OnVoltageChangeCallback tempChangeFunc);
+   PhidgetReturnCode setVoltageValueChangeFunc(PhidgetVoltageInput_OnVoltageChangeCallback tempChangeFunc, void *ctx = NULL);
 
    /*! @brief Set voltage range
     *

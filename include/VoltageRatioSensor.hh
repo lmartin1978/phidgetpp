@@ -59,7 +59,7 @@ public:
    * triggered. It is recommended that tempChangeFunc is defined after
    * the devices namespace in the main file.
    */
-  PhidgetReturnCode SetSensorValueChangeFunc(PhidgetVoltageRatioInput_OnSensorChangeCallback tempChangeFunc);
+  PhidgetReturnCode SetSensorValueChangeFunc(PhidgetVoltageRatioInput_OnSensorChangeCallback tempChangeFunc, void *ctx = NULL);
 
 private:
   PhidgetVoltageRatioInputHandle handle;
